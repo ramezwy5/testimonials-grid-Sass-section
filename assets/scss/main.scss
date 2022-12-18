@@ -1,0 +1,88 @@
+
+@import 'resets', 'mixins';
+
+.container{
+    width: 73%;
+    margin: 4% auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    @include mobile{
+        display: block;
+        width: 100%;
+    }
+}
+
+.card{
+    border-radius: 15px;
+    padding: 1.5rem 2.75rem 0.5rem;
+    &-name{
+        position: relative;
+        margin-bottom: 1rem;
+        padding-left: 3.5rem;
+        #{&}__name{
+            display: inline;
+        }
+    }
+    @include mobile{
+        margin-bottom: 1.5rem;
+    }
+}
+
+.card-title{
+    font-size: 1.2rem;
+    font-weight: map-get($weight, 'bold');
+    line-height: 1.2em;
+    @include mobile{
+        font-size: 1.3rem;
+    }
+}
+.card-text{
+    opacity: 0.7;
+    padding-top: 1em;
+    line-height: 1.2rem;
+}
+
+#daniel{
+    grid-column: 1/ span 2;
+    background: url(../../images/bg-pattern-quotation.svg) no-repeat 75% 0px, $Moderate-violet;
+    color: $White;
+    .card-name::before{
+        @include img-border($border-violet, "../../images/image-daniel.jpg");
+    }
+    
+}
+#jonathan{
+    background: $Very-dark-grayish-blue;
+    color: $White;
+    .card-name::before{
+        @include img-border($Very-dark-grayish-blue, "../../images/image-jonathan.jpg");
+    }
+}
+#jeanette{
+    background-color: $White;
+    box-shadow: 15px 15px 20px 5px hsl(210deg 46% 91%);
+    .card-name::before{
+        @include img-border($White, "../../images/image-jeanette.jpg");
+    }
+}
+#patrick{
+    grid-column: 2 / span 2;
+    background: $Very-dark-blackish-blue;
+    color: $White;
+    .card-name::before{
+        @include img-border($border-violet, "../../images/image-patrick.jpg");
+    }
+}
+#kira{
+    grid-column: 4 / 5;
+    grid-row: 1 / span 2;
+    background: $White;
+    color: $Very-dark-grayish-blue;
+    box-shadow: 15px 15px 20px 5px hsl(210deg 46% 91%);
+    .card-name::before{
+        @include img-border($White, "../../images/image-kira.jpg");
+    }
+}
+

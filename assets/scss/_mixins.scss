@@ -1,0 +1,19 @@
+@mixin img-border($color, $url){
+    position: absolute;
+    content: '';
+    background-image: url($url);
+    width: 35px;
+    aspect-ratio: 1;
+    top: -5px;
+    left: 0;
+    background-position-x: center;
+    background-size: cover;
+    border: 3px solid $color;
+    border-radius: 50%;
+}
+
+@mixin mobile{
+    @media (max-width: 991px) {
+        @content;        
+    }
+}
